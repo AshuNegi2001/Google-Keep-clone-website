@@ -1,0 +1,48 @@
+ReactJS Question:
+
+ 1.   How we can create an element without using jsx code in reactjs?
+Ans  Firstly we inject our CDN links in html code like:
+	
+ 	<!--Using CDN links-inject-->
+    <div id="root">Not rendered!</div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+	
+	and after that,
+	we create element in js file like this:
+	
+    const heading = React.createElement(
+      "h1",
+      {
+        id: "container",
+        className: "container_box",
+        style: { color: "blue", border: "2px solid" }, // we can use also css  inside this{ }
+      },
+      "Hello, Everyone! I'm ashu"
+    ); // createElement is react method for making an element with using jsx code.
+
+    const heading2 = React.createElement(
+      "h2",
+      {
+        id: "container",
+        className: "container_box",
+        style: { color: "blue", border: "2px solid" }, // we can use also css  inside this{ }
+      },
+      "Hello, Everyone! I'm ashu"
+    ); // createElement is react method for making an element with using jsx code.
+
+    const root = ReactDOM.createRoot(document.getElementById("root")); // Call createRoot to create a React root for displaying content inside a browser DOM element.
+    root.render([heading, heading2]); // render method help us to render the content in the browser DOM element.also we can use array list for passing multiple element in render method.       render method replace all old element with new element which we pass in render method.
+
+2.   How we can make own script for running command in shortcut way?
+
+Ans	Firstly, we have make script in package.json type scripts like "start": "parcel index.html"
+	then, we run like this npm run start or npm start instead of npx parcel index.html
+	"build": "parcel build index.html" and then, npm run build.
+
